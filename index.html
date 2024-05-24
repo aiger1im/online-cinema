@@ -5,65 +5,217 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Movie312 - Онлайн-кинотеатр</title>
     <link rel="stylesheet" href="./css/style.css" />
+    <!-- Вот изменения, добавленные из первого кода -->
+    <link
+      href="https://i.pinimg.com/originals/bf/3d/c7/bf3dc754d6163b2ed303e993982241e9.jpg"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <!-- HEADER START -->
     <header class="header">
       <div class="container">
-        <a href="/" class="logo">Movie312</a>
+        <a style="text-decoration: none" href="" class="logo">Movie312</a>
         <nav class="nav">
           <ul id="ul_nav_list" class="nav-list">
-            <li class="nav-item"><a style="color: aliceblue; text-decoration: none;" href="/">Главная</a></li>
-            <li class="nav-item"><a style="color: aliceblue; text-decoration: none;" href="/movies">Фильмы</a></li>
-            <li class="nav-item"><a style="color: aliceblue; text-decoration: none;" href="/serials">Сериалы</a></li>
-            <li class="nav-item"><a style="color: aliceblue; text-decoration: none;" href="/cartoons">Мультфильмы</a></li>
-            <li class="nav-item"><a style="color: aliceblue; text-decoration: none;" href="/soon">Скоро на сайте</a></li>
             <li class="nav-item">
-              <button style="background-color: aliceblue; color: rgb(20, 167, 167);" class="btn btn-login">Регистрация</button>
+              <a class="nav-link" href="">Главная</a>
             </li>
             <li class="nav-item">
-              <input type="text" class="search-input" placeholder="Поиск" />
+              <a class="nav-link" href="">Фильмы</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">Сериалы</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">Мультфильмы</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">Скоро на сайте</a>
+            </li>
+            <li class="nav-item">
+              <button class="btn btn-login">Админ</button>
+            </li>
+            <!-- <li class="nav-item"> -->
+            <!-- <input type="text" class="search-input" placeholder="Поиск" /> -->
+            <!-- </li> -->
           </ul>
         </nav>
       </div>
     </header>
+    <!-- HEADER FINISH -->
 
-    <main class="main">
-      <div class="container">
-        <section class="section">
-          <h2>Фильмы</h2>
-          <div class="movies-list">
-            <div class="movie">
-              <img src="" alt="Название фильма 1" />
-              <div class="movie-info">
-                <h3>Название фильма 1</h3>
-                <p>Описание фильма 1</p>
-                <button class="btn btn-watch">Смотреть</button>
-              </div>
-            </div>
-            <div class="movie">
-              <img src="" alt="Название фильма 2" />
-              <div class="movie-info">
-                <h3>Название фильма 2</h3>
-                <p>Описание фильма 2</p>
-                <button class="btn btn-watch">Смотреть</button>
-              </div>
-            </div>
+    <!-- Добавленный блок из первого кода -->
+    <header class="container">
+      <div class="header__content">
+        <!-- <a href="index.html" class="header__logo">MovieApp</a> -->
+        <form>
+          <input type="text" class="header__search" placeholder="Поиск" />
+        </form>
+      </div>
+    </header>
+    <div class="container">
+      <div class="movies"></div>
+    </div>
+    <!-- Конец добавленного блока из первого кода -->
+
+    <!-- MODAL START -->
+    <div class="modal"></div>
+    <!-- MODAL FINISH -->
+
+    <div class="container">
+      <h1 class="title">Pagination</h1>
+      <div class="posts"></div>
+      <div class="pagination"></div>
+    </div>
+
+    <div class="container">
+      <h2>Contact Information</h2>
+      <form id="contact-form">
+        <div class="form-group">
+          <label style="color: aliceblue" for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="form-group">
+          <label style="color: aliceblue" for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label style="color: aliceblue" for="phone">Phone:</label>
+          <input type="tel" id="phone" name="phone" required />
+        </div>
+        <div class="form-group">
+          <label style="color: aliceblue;" for="message">Message:</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-submit">Submit</button>
+      </form>
+    </div>
+
+
+<!-- CURD START  -->
+      <div class="accordion-item" id="accordionFlushExample">
+        <h2 class="accordion-header">
+          <button
+            id="btnOpenForm"
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseThree"
+            aria-expanded="false"
+            aria-controls="collapseThree"
+          ></button>
+        </h2>
+        <div
+          id="collapseThree"
+          class="accordion-collapse collapse"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <input
+              class="form-control"
+              id="inpName"
+              type="text"
+              placeholder="название фильма"
+            />
+            <input
+              class="form-control"
+              id="inpAuthor"
+              type="text"
+              placeholder="актеры"
+            />
+            <input
+              class="form-control"
+              id="inpImg"
+              type="text"
+              placeholder="Изображение"
+            />
+            <input
+              class="form-control"
+              id="inpPrice"
+              type="text"
+              placeholder="Информация"
+            />
+            <button id="btnAdd" type="button" class="btn btn-primary">
+              Добавить
+            </button>
           </div>
-        </section>
-        <section class="section">
-          <h2>Сериалы</h2>
-          <div class="serials-list"></div>
-        </section>
+        </div>
       </div>
-    </main>
-
-    <footer class="footer">
-      <div class="container">
-        <p>&copy; 2024 Movie312 - Онлайн-кинотеатр</p>
+    </div>
+    <!-- ADD PANEL FINISH -->
+    <!-- SECTION BOOKS START -->
+    <section class="sectionBooks"></section>
+    <!-- SECTION BOOKS FINISH -->
+    <!-- PAGINATION START -->
+    <div aria-label="Page navigation example">
+      <ul class="pagination">
+        <li class="page-item"><a id="prevBtn" class="page-link" href="#">Previous</a></li>
+        
+        <li class="page-item"><a id="nextBtn" class="page-link" href="#">Next</a></li>
+      </ul>
+    </div>
+    <!-- PAGINATION FINISH -->
+    <!-- EDIT MODAL START -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      aria-hidden="true"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="btn-close"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <input
+            class="form-control"
+            id="inpEditName"
+            type="text"
+            placeholder="Название фильма"
+          />
+          <input
+            class="form-control"
+            id="inpEditAuthor"
+            type="text"
+            placeholder="Автор и актера"
+          />
+          <input
+            class="form-control"
+            id="inpEditImg"
+            type="text"
+            placeholder="Изображение"
+          />
+          <input
+            class="form-control"
+            id="inpEditPrice"
+            type="text"
+            placeholder="информация"
+          />
+          </div>
+          <div class="modal_delete">
+            <button
+            id="btnEditSave"
+              class="btn btn-primary"
+              data-bs-toggle="modal"
+              type="button"
+              data-bs-target="#exampleModal"
+            >
+              Сохранить
+            </button>
+          </div>
+        </div>
       </div>
-    </footer>
-    <script src=""></script>
+    </div>
+    <!-- CRUD FINISH -->
     <script src="./js/main.js"></script>
   </body>
 </html>

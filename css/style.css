@@ -1,76 +1,341 @@
+/* Стили для заголовка (.header) */
 .header {
-    background-color: #2cb4d6;
-    color: white;
-    padding: 10px 0;
-    margin: -10px;
-  }
-  
-  body {
-    background-image: url("https://i.pinimg.com/736x/24/14/a2/2414a2c87ee739b35cb4be70a4ffca02.jpg");
-    /* width: 630px;
-    height: 90px;
-    display: flex; */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    font-family: Arial, sans-serif;
-  }
+  background-color: #517af5; /* Цвет фона */
+  color: white; /* Цвет текста */
+  padding: 0;
+  margin: -10p;
+}
 
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
+/* Стили для ссылок */
+a {
+  animation-name: pulsing; /* Устанавливает анимацию с именем "pulsing" */
+  animation-duration: 2s; /* Продолжительность анимации 2 секунды */
+  animation-iteration-count: infinite; /* Количество повторений анимации (бесконечно) */
+}
+
+/* Ключевые кадры анимации "pulsing" */
+@keyframes pulsing {
+  0% {
+    transform: scale(
+      0.5,
+      0.5
+    ); /* Начальный размер: уменьшенный в 2 раза по горизонтали и вертикали */
   }
-  
-  .logo {
-    display: inline-block;
-    font-size: 24px;
-    font-weight: bold;
-    color: white;
+  50% {
+    transform: scale(1, 1); /* Размер в середине анимации: исходный размер */
   }
-  
-  .nav {
-    display: inline-block;
-    float: right;
+  100% {
+    transform: scale(
+      0.5,
+      0.5
+    ); /* Конечный размер: уменьшенный в 2 раза по горизонтали и вертикали */
   }
-  
+}
+
+/* Стили для навигационных ссылок */
+a.nav-link {
+  color: aliceblue; /* Цвет текста */
+  text-decoration: none; /* Отмена подчеркивания */
+  transition: color 0.3s ease-in-out; /* Плавный переход цвета текста */
+}
+
+/* При наведении на навигационные ссылки изменяется цвет текста на красный */
+a.nav-link:hover {
+  color: red;
+}
+
+/* Общие стили для всего тела документа */
+body {
+  overflow-y: scroll; /* Включает вертикальную прокрутку */
+  background-image: url("https://i.pinimg.com/originals/bf/3d/c7/bf3dc754d6163b2ed303e993982241e9.jpg"); /* Фоновое изображение */
+  background-size: cover; /* Растягивает фоновое изображение на всю область */
+  font-family: Arial, sans-serif; /* Шрифт текста */
+  margin: 0; /* Убирает внешние отступы */
+}
+
+/* Стили для контейнера */
+.container {
+  max-width: 1200px; /* Максимальная ширина контейнера */
+  margin: 0 auto; /* Центрирует контейнер по горизонтали */
+}
+
+/* Стили для логотипа */
+.logo {
+  display: inline-block; /* Устанавливает элемент как блочный, но сохраняет его в строчной компоновке */
+  font-size: 24px; /* Размер шрифта */
+  font-weight: bold; /* Жирное начертание */
+  color: white; /* Цвет текста */
+}
+
+/* Стили для навигации */
+.nav {
+  display: inline-block; /* Устанавливает элемент как блочный, но сохраняет его в строчной компоновке */
+  float: right; /* Выравнивание по правому краю */
+}
+
+/* Стили для списка навигационных элементов */
+.nav-list {
+  list-style: none; /* Убирает маркеры списка */
+  margin: 0; /* Убирает внешние отступы */
+  padding: 0; /* Убирает внутренние отступы */
+}
+
+/* Стили для элементов навигации */
+.nav-item {
+  display: inline-block; /* Устанавливает элемент как блочный, но сохраняет его в строчной компоновке */
+  margin-right: 20px; /* Внешний отступ справа */
+}
+
+/* Стили для кнопок */
+.btn {
+  background-color: #6d91fd; /* Цвет фона кнопки */
+  color: #fff; /* Цвет текста */
+  padding: 7px 20px; /* Внутренние отступы сверху и снизу 7 пикселей, слева и справа 20 пикселей */
+  border: none; /* Убирает границу */
+  cursor: pointer; /* Изменяет указатель мыши при наведении */
+  transition: background-color 0.3s ease-in-out; /* Плавный переход цвета фона */
+}
+
+/* Стили для кнопки входа */
+.btn-login {
+  transition: background-color 0.3s ease-in-out; /* Плавный переход цвета фона */
+}
+
+/* Определение анимации для изменения цвета фона кнопки */
+@keyframes colorChange {
+  from {
+    background-color: #6d91fd; /* Начальный цвет фона кнопки */
+  }
+  to {
+    background-color: red; /* Конечный цвет фона кнопки */
+  }
+}
+
+/* Применение анимации при наведении на кнопку входа */
+.btn-login:hover {
+  animation: colorChange 0.3s forwards; /* Применение анимации colorChange при наведении */
+}
+
+/* Стили для блока с фильмами */
+.movies {
+  display: flex; /* Устанавливает флекс-контейнер */
+  flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
+  justify-content: space-around; /* Распределяет элементы по горизонтали с равным пространством между ними */
+}
+
+/* Стили для отдельного фильма */
+.movie {
+  width: 240px; /* Ширина фильма */
+  margin: 10px; /* Внешние отступы */
+  position: relative; /* Относительное позиционирование, используется для позиционирования дочерних элементов */
+}
+
+/* Стили для обложки фильма */
+.movie__cover-inner {
+  position: relative; /* Относительное позиционирование */
+  height: 360px; /* Высота блока обложки фильма */
+}
+
+/* Стили для изображения обложки фильма */
+.movie__cover {
+  max-width: 100%; /* Максимальная ширина изображения */
+  height: 100%; /* Высота изображения */
+}
+
+/* Стили для затемненного слоя над обложкой фильма */
+.movie__cover--darkened {
+  background-color: #000000; /* Цвет фона затемненного слоя */
+  opacity: 0.1; /* Прозрачность */
+  position: absolute; /* Абсолютное позиционирование */
+  top: 0; /* Расположение сверху */
+  left: 0; /* Расположение слева */
+  right: 0; /* Расположение справа */
+  max-width: 100%; /* Максимальная ширина */
+  height: 100%; /* Высота */
+  z-index: 1; /* Порядок слоя */
+}
+
+/* При наведении на затемненный слой изменяется его цвет на серый и меняется курсор на указатель */
+.movie__cover--darkened:hover {
+  background-color: grey;
+  cursor: pointer;
+}
+
+/* Стили для информационного блока фильма */
+.movie__info {
+  padding: 10px 0px; /* Внутренние отступы сверху и снизу 10 пикселей, слева и справа 0 */
+}
+
+/* Стили для заголовка фильма */
+.movie__title {
+  font-size: 16px; /* Размер шрифта заголовка */
+  color: #ffffff; /* Цвет текста */
+}
+
+/* Стили для категории фильма */
+.movie__category {
+  font-size: 14px; /* Размер шрифта категории */
+  color: #ffd80e; /* Цвет текста */
+}
+
+/* Стили для средней оценки фильма */
+.movie__average {
+  position: absolute; /* Абсолютное позиционирование */
+  top: 10px; /* Отступ сверху */
+  left: 10px; /* Отступ слева */
+  right: 0; /* Отступ справа */
+  border-radius: 50%; /* Закругление краев для создания круглой формы */
+  width: 36px; /* Ширина */
+  height: 36px; /* Высота */
+  display: flex; /* Устанавливает флекс-контейнер */
+  justify-content: center; /* Выравнивание по горизонтали */
+  align-items: center; /* Выравнивание по вертикали */
+  background-color: #1a191f; /* Цвет фона */
+  color: #ffffff; /* Цвет текста */
+  font-size: 14px; /* Размер шрифта */
+}
+
+/* Стили для модального окна */
+.modal {
+  display: none; /* Скрывает модальное окно */
+  position: fixed; /* Фиксированное позиционирование */
+  z-index: 100; /* Порядок слоя */
+  left: 0; /* Расположение слева */
+  top: 0; /* Расположение сверху */
+  width: 100%; /* Ширина */
+  height: 100%; /* Высота */
+  background-color: rgba(0, 0, 0, 0.5); /* Цвет фона с прозрачностью */
+}
+
+/* При отображении модального окна оно центрируется по горизонтали и вертикали */
+.modal--show {
+  display: flex; /* Отображает модальное окно как флекс-контейнер */
+  justify-content: center; /* Выравнивает по горизонтали */
+  align-items: center; /* Выравнивает по вертикали */
+}
+/* Стили для карточки модального окна */
+.modal__card {
+  background-color: #ffffff; /* Цвет фона */
+  max-width: 600px; /* Максимальная ширина */
+  padding: 16px; /* Внутренние отступы */
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5); /* Тень */
+}
+
+/* Стили для фонового изображения в модальном окне */
+.modal__movie-backdrop {
+  width: 200px; /* Ширина */
+  margin: 0 auto; /* Центрирование */
+}
+
+/* Стили для информационного блока фильма в модальном окне */
+.modal__movie-info {
+  margin-left: 20px; /* Отступ слева */
+}
+
+/* Стили для ссылки на сайт фильма в модальном окне */
+.modal__movie-site {
+  color: #517af5; /* Цвет текста */
+}
+
+/* PAGINATION */
+
+/* Основной контейнер для пагинации */
+.pagination {
+  display: flex; /* Отображаем элементы внутри в строку */
+  justify-content: center; /* Выравниваем элементы по центру горизонтально */
+}
+
+/* Список элементов пагинации */
+.pagination__list {
+  display: flex; /* Отображаем элементы внутри в строку */
+  list-style-type: none; /* Убираем маркеры списка */
+  color: white; /* Устанавливаем цвет текста */
+}
+
+/* Каждый элемент пагинации */
+.pagination__item {
+  padding: 8px; /* Отступы внутри элемента */
+  margin: 8px; /* Внешние отступы между элементами */
+  cursor: pointer; /* Изменяем указатель мыши при наведении на элемент */
+}
+
+/* Активный элемент пагинации */
+.pagination__item--active {
+  font-weight: 800; /* Устанавливаем жирный шрифт для активного элемента */
+  color: white; /* Устанавливаем цвет текста */
+  background-color: #517af5; /* Устанавливаем фоновый цвет */
+}
+
+/* Стили для контейнера формы */
+.container {
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+/* Стили для формы */
+#contact-form {
+  max-width: 600px; /* Максимальная ширина формы */
+  margin: 0 auto; /* Центрирование формы */
+}
+
+/* Стили для группы полей формы */
+.form-group {
+  margin-bottom: 20px; /* Внешний отступ снизу */
+}
+
+/* Стили для текстового поля ввода */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Стили для кнопки отправки формы */
+.btn-submit {
+  background-color: #6d91fd;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* При наведении на кнопку отправки формы изменяется её цвет фона */
+.btn-submit:hover {
+  background-color: #265af5;
+  transform: scale(1.05);
+}
+
+.container h2 {
+  margin-left: 30px;
+  color: white;
+  text-align: center;
+}
+
+@media all and (max-width: 1024px) {
+  a.logo {
+    font-size: 20px;
+    margin-left: 20px;
+  }
+}
+
+@media all and (max-width: 768px) {
   .nav-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    font-size: 15px;
+    margin-left: 20px;
+    margin: none;
+    margin-top: 20px;
   }
-  
-  .container .nav .nav-list .nav-item{
-    color:#fff
-  }
-  .nav-item {
-    display: inline-block;
-    margin-right: 20px;
+}
 
-  }
-  
-  .nav-link {
-    text-decoration: none;
-    color: #fff;
-  }
-  
-  .btn {
-    background-color: #3bacdf;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-  }
-  /* .btn-login: */
-  /* Стилизация основного контента */
-  .main {
-    padding: 20px 0;
-  }
-  
-  .section {
-    margin-bottom: 20px;
-  }
-  
-  .section h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
+.sectionBooks {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: center;
+}
